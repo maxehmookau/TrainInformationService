@@ -76,6 +76,7 @@ public class TrainInformationService {
 					}.parse(data)
 				for service in xml["Envelope"]["Body"]["GetDepartureBoardResponse"]["GetStationBoardResult"]["trainServices"]["service"].all {
 					var delayReason: String?
+                    var platform: String?
 					let serviceId = service["serviceID"].element!.text
 					let destination = service["destination"]["location"]["locationName"].element!.text
 					let departureTime = service["std"].element!.text
@@ -112,6 +113,7 @@ public class TrainInformationService {
                 
                 for service in stationBoardResultXml["trainServices"]["service"].all {
                     var delayReason: String?
+                    var platform: String?
                     let serviceId = service["serviceID"].element!.text
                     let destination = service["destination"]["location"]["locationName"].element!.text
                     let departureTime = service["std"].element!.text
@@ -222,6 +224,7 @@ extension TrainInformationService {
         }.parse(data)
         for service in xml["Envelope"]["Body"]["GetDepartureBoardResponse"]["GetStationBoardResult"]["trainServices"]["service"].all {
             var delayReason: String?
+            var platform: String?
             let serviceId = service["serviceID"].element!.text
             let destination = service["destination"]["location"]["locationName"].element!.text
             let departureTime = service["std"].element!.text
@@ -256,6 +259,7 @@ extension TrainInformationService {
         
         for service in stationBoardResultXml["trainServices"]["service"].all {
             var delayReason: String?
+            var platform: String?
             let serviceId = service["serviceID"].element!.text
             let destination = service["destination"]["location"]["locationName"].element!.text
             let departureTime = service["std"].element!.text
