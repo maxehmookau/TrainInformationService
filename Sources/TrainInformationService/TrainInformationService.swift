@@ -114,10 +114,11 @@ public class TrainInformationService {
                     let destination = service["destination"]["location"]["locationName"].element!.text
                     let departureTime = service["std"].element!.text
                     let currentStatus = service["etd"].element!.text
+                    let platform = service["platform"].element!.text
                     if let reason = service["delayReason"].element?.text {
                         delayReason = reason
                     }
-                    let departingService = DepartingService(serviceId: serviceId, destination: destination, departureTime: departureTime, currentStatus: currentStatus, delayReason: delayReason)
+                    let departingService = DepartingService(serviceId: serviceId, destination: destination, departureTime: departureTime, currentStatus: currentStatus, delayReason: delayReason, platform: platform)
                     departures.append(departingService)
                 }
                 
@@ -221,10 +222,11 @@ extension TrainInformationService {
             let destination = service["destination"]["location"]["locationName"].element!.text
             let departureTime = service["std"].element!.text
             let currentStatus = service["etd"].element!.text
+            let platform = service["platform"].element!.text
             if let reason = service["delayReason"].element?.text {
                 delayReason = reason
             }
-            let departingService = DepartingService(serviceId: serviceId, destination: destination, departureTime: departureTime, currentStatus: currentStatus, delayReason: delayReason)
+            let departingService = DepartingService(serviceId: serviceId, destination: destination, departureTime: departureTime, currentStatus: currentStatus, delayReason: delayReason, platform: platform)
             board.append(departingService)
         }
         
@@ -252,10 +254,11 @@ extension TrainInformationService {
             let destination = service["destination"]["location"]["locationName"].element!.text
             let departureTime = service["std"].element!.text
             let currentStatus = service["etd"].element!.text
+            let platform = service["platform"].element!.text
             if let reason = service["delayReason"].element?.text {
                 delayReason = reason
             }
-            let departingService = DepartingService(serviceId: serviceId, destination: destination, departureTime: departureTime, currentStatus: currentStatus, delayReason: delayReason)
+            let departingService = DepartingService(serviceId: serviceId, destination: destination, departureTime: departureTime, currentStatus: currentStatus, delayReason: delayReason, platform: platform)
             departures.append(departingService)
         }
         
