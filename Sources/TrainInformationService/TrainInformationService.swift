@@ -80,8 +80,8 @@ public class TrainInformationService {
 					let destination = service["destination"]["location"]["locationName"].element!.text
 					let departureTime = service["std"].element!.text
 					let currentStatus = service["etd"].element!.text
-                    if let platform = service["platform"].element?.text {
-						platform = platform
+                    if let plt = service["platform"].element?.text {
+						platform = plt
 					}
 					if let reason = service["delayReason"].element?.text {
 						delayReason = reason
@@ -116,8 +116,8 @@ public class TrainInformationService {
                     let destination = service["destination"]["location"]["locationName"].element!.text
                     let departureTime = service["std"].element!.text
                     let currentStatus = service["etd"].element!.text
-                    if let platform = service["platform"].element?.text {
-						platform = platform
+                    if let plt = service["platform"].element?.text {
+						platform = plt
 					}                   
                     if let reason = service["delayReason"].element?.text {
                         delayReason = reason
@@ -226,8 +226,8 @@ extension TrainInformationService {
             let destination = service["destination"]["location"]["locationName"].element!.text
             let departureTime = service["std"].element!.text
             let currentStatus = service["etd"].element!.text
-            if let platform = service["platform"].element?.text {
-                platform = platform
+            if let plt = service["platform"].element?.text {
+                platform = plt
             }
             if let reason = service["delayReason"].element?.text {
                 delayReason = reason
